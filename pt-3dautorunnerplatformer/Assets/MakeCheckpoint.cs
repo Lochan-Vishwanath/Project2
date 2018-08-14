@@ -11,7 +11,7 @@ public class MakeCheckpoint : MonoBehaviour {
 
 	// Draw a line every fram. This is as smooth and fast as Unity can do
 
-	void FixedUpdate()
+/*	void FixedUpdate()
 	{
 		objToSpawn = new GameObject ("Checkpoint");
 		objToSpawn.tag = "Checkpoint";
@@ -29,10 +29,10 @@ public class MakeCheckpoint : MonoBehaviour {
 		 }
 	 }
 
-	 
+*/	 
 
 	// Draw it after every certain amount of time
-/*	void Start()
+	void Start()
 	{
 		StartCoroutine (DrawPath(waitTime));
 	}
@@ -47,6 +47,6 @@ public class MakeCheckpoint : MonoBehaviour {
 			yield return new WaitForSeconds (timeRate);
 		}
 	}
-*/
+
 
 }

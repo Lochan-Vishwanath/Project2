@@ -1736,7 +1736,7 @@ GameObject:
   - component: {fileID: 1383510523}
   - component: {fileID: 1383510522}
   - component: {fileID: 1383510526}
-  - component: {fileID: 1383510527}
+  - component: {fileID: 1383510528}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1824,7 +1824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: -2.4, y: 2.4, z: -10.39}
   Playerobj: {fileID: 297435384}
---- !u!114 &1383510527
+--- !u!114 &1383510528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1832,10 +1832,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1383510521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eee7b019fe707c24ea5836dd4417b269, type: 3}
+  m_Script: {fileID: 11500000, guid: 8837fcfcf3774e94ba9764d46d17643f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 0.2
+  checkpoint: []
 --- !u!1 &1493078180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1934,10 +1934,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1554040342}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54337d2cad305e64fa87400a8bba433c, type: 3}
+  m_Script: {fileID: 11500000, guid: eee7b019fe707c24ea5836dd4417b269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpoint: []
+  waitTime: 0.2
 --- !u!1 &1721936671
 GameObject:
   m_ObjectHideFlags: 0
