@@ -9,7 +9,7 @@ public class FileIO : MonoBehaviour {
 	
 	public GameObject[] checkpoint;
 
-	void FixedUpdate(){
+	void OnApplicationQuit(){
 		checkpoint=GameObject.FindGameObjectsWithTag ("Checkpoint");
 
 		//if(Input.GetKeyDown(KeyCode.Q)){

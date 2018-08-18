@@ -3,38 +3,42 @@
 
 using UnityEngine;
 using System.Collections;
-[ExecuteInEditMode]
-public class DrawCheckPoint : MonoBehaviour {
+using UnityEditor;
+using System.IO;
+//[ExecuteInEditMode]
 
-public GameObject[] checkpoint;
+public class DrawCheckPoint : MonoBehaviour{
+ 
+	string line;
+	[SerializeField]
+	Vector3 StartingPosition;
 
-	public static bool exitedplaymode=false;
-	void Update()
-	{
-		 #if UNITY_EDITOR 
-     	if (!Application.isPlaying) {
-			 Debug.Log("AM BATMAN 2");
-			  if ( CheckpointsSingleton.arrayofObjs.Length > 1) {
-				Debug.Log("AM BATMAN 2");
-				for (int i = 0; i <  CheckpointsSingleton.arrayofObjs.Length - 1; i++) {
-					Debug.DrawLine ( CheckpointsSingleton.arrayofObjs [i].transform.position,  CheckpointsSingleton.arrayofObjs [i + 1].transform.position, Color.green);
-					}
-				}
-		} 
-		 //or whatever script needs to be run when in edition mode.
-		 #endif
+	Vector3 NextPosition;
 
-
-		/*//if(exitedplaymode)
-		checkpoint = GameObject.FindGameObjectsWithTag ("Checkpoint");
-		if (checkpoint.Length > 1) {
-			Debug.Log("AM BATMAN 2");
-			for (int i = 0; i < checkpoint.Length - 1; i++) {
-
-				Debug.DrawLine (checkpoint [i].transform.position, checkpoint [i + 1].transform.position, Color.green);
-			}
-		}*/
-
-	}
-}
-
+   public void Function1(){
+	   	StreamReader file =new StreamReader("Assets/Resources/abc.txt");
+	    while((line=file.ReadLine())!=null){
+			NextPosition=StringToVector3(line);
+			Debug.DrawLine(StartingPosition,NextPosition,Color.white,10000f);
+			StartingPosition=NextPosition;
+		}
+   }
+   public static Vector3 StringToVector3(string sVector)
+    {
+         // Remove the parentheses
+        // if (sVector.StartsWith ("(") && sVector.EndsWith (")")) {
+        //     sVector = sVector.Substring(1, sVector.Length-2);
+        // }
+ 
+         // split the items
+         string[] sArray = sVector.Split(',');
+ 
+         // store as a Vector3
+         Vector3 result = new Vector3(
+             float.Parse(sArray[0]),
+             float.Parse(sArray[1]),
+             float.Parse(sArray[2]));
+ 
+        return result;
+    } 
+ }
