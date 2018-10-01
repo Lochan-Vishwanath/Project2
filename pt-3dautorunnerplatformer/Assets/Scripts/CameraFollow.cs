@@ -6,13 +6,13 @@ public class CameraFollow : MonoBehaviour {
 
 	public Vector3 offset;
 	//public static CameraFollow cobj;
-	Vector3 camerapos3D;
-	Quaternion camerarot3D; 
+	//Vector3 camerapos3D;
+	//Quaternion camerarot3D; 
 	public Transform Playerobj;
 	void start(){
-		camerapos3D=offset;
+		//camerapos3D=offset;
 		//camerapos3D=transform.position;
-		camerarot3D=transform.rotation;
+		//camerarot3D=transform.rotation;
 	}
 	void LateUpdate(){
 		Vector3 finalposition;

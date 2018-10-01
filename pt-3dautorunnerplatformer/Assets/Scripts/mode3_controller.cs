@@ -11,7 +11,7 @@ public class mode3_controller : MonoBehaviour {
 	Camera cameramain;
 	public int speed;
 	float lowy=6.00f;
-	float positiony;
+	//float positiony;
 	bool updowna=true,mode=true;
 
 	void Start () {
@@ -20,7 +20,7 @@ public class mode3_controller : MonoBehaviour {
 		bb = b.position;
 		cc = c.position;
 		dd = d.position;
-		positiony = transform.position.y;
+		//positiony = transform.position.y;
 		cameramain = Camera.main;
 		offset = cameramain.transform.position - transform.position;
 	}

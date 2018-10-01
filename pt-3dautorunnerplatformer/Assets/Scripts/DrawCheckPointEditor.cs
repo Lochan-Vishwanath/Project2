@@ -15,7 +15,8 @@ public class DrawCheckPointEditor : Editor {
          DrawCheckPoint myScript = (DrawCheckPoint)target;
          if(GUILayout.Button("Create objects"))
          {
-            myScript.Function1();
+           myScript.Function1();
+           //myScript.Functon2();
          }
      }
 	 

@@ -5,17 +5,18 @@ using UnityEngine;
 public class InputController : MonoBehaviour {
 
 	public static bool YesA,YesB;
-	public static bool Long_yesA,Long_yesB;
+	public static bool Long_yesA=false,Long_yesB=false;
 
 	public void ActionA(){
 		YesA=true;
-		if(Input.GetTouch(0).phase==TouchPhase.Began||Input.GetTouch(1).phase==TouchPhase.Began){
+		if(Input.GetTouch(0).phase==TouchPhase.Stationary && !Long_yesA){
 			Long_yesA=true;
 		}
 	}
 	public void ActionB(){
 		YesB=true;
 		if(Input.GetTouch(0).phase==TouchPhase.Began){
+			Debug.Log("longActionb");
 			Long_yesB=true;
 		}
 	}
@@ -39,7 +40,8 @@ public class InputController : MonoBehaviour {
 
 
 	void Update(){
-		Debug.Log(YesA+"   "+YesB);
+		//Debug.Log(YesA+"   "+YesB);
+		Debug.Log(Long_yesA+"  "+Long_yesB);
 		//Debug.Log(Input.GetTouch(0).phase);
 		if(Long_yesA==true  && (Input.GetTouch(0).phase==TouchPhase.Ended))
 			Long_yesA=false;

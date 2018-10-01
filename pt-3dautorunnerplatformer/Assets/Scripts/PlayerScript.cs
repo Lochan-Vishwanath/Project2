@@ -6,13 +6,13 @@ public class PlayerScript : MonoBehaviour {
 
 	public float Speed,jumpforce;
 	Rigidbody myrb; 
-	Vector3 fowardvelocity,defaultgravity;
+	Vector3 fowardvelocity;//defaultgravity;
 	Animator myanimator;
 	bool GravityisFlipped,BottomColiding,TopColliding;
 
 	void Start(){
 		Physics.gravity=4f*Physics.gravity;
-		defaultgravity=Physics.gravity;
+		//defaultgravity=Physics.gravity;
 		GravityisFlipped=false;
 		BottomColiding=TopColliding=true;
 		myrb=GetComponent<Rigidbody>();

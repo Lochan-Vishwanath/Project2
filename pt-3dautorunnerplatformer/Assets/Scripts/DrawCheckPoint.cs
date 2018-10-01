@@ -13,7 +13,12 @@ public class DrawCheckPoint : MonoBehaviour{
 	[SerializeField]
 	Vector3 StartingPosition;
 
+    Vector3[] positions=new Vector3[200];
+
 	Vector3 NextPosition;
+
+    public LineRenderer linerender;
+    bool linerenderstart=false;
 
    public void Function1(){
 	   	StreamReader file =new StreamReader("Assets/Resources/abc.txt");
@@ -22,6 +27,16 @@ public class DrawCheckPoint : MonoBehaviour{
 			Debug.DrawLine(StartingPosition,NextPosition,Color.white,10000f);
 			StartingPosition=NextPosition;
 		}
+   }
+
+   public void Functon2(){
+       StreamReader file=new StreamReader("Assets/Resources/abc.txt");
+       int i=0;
+       while((line=file.ReadLine())!=null){
+           positions[i++]=StringToVector3(line);
+       }
+       linerender.positionCount=positions.Length;
+        linerenderstart=true;
    }
    public static Vector3 StringToVector3(string sVector)
     {
@@ -41,4 +56,16 @@ public class DrawCheckPoint : MonoBehaviour{
  
         return result;
     } 
+
+    void Update(){
+        if(linerenderstart){
+        //foreach(Vector3 position in positions){
+            //linerender.SetPositions(positions);
+            for(int i=0;i<positions.Length;i++){
+                linerender.SetPosition(i,positions[i]);
+            }
+            //linerenderstart=false;
+        }
+        //}
+    }
  }
