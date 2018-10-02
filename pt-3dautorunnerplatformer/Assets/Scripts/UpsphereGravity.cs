@@ -7,6 +7,8 @@ public class UpsphereGravity : MonoBehaviour {
 	Rigidbody rb;
 	public Vector3 objgravity;
 
+	public float Force;
+
 	[SerializeField]
 	Collider Upcollider;
 
@@ -19,9 +21,9 @@ public class UpsphereGravity : MonoBehaviour {
 	void FixedUpdate () {
 		rb.useGravity=false;
 		if(!TwinSphereMovement.flipgravity)
-			rb.AddForce(objgravity);
+			rb.AddForce(objgravity*Force);
 		else
-			rb.AddForce(-objgravity);
+			rb.AddForce(-objgravity*Force);
 
 		if(Input.GetKey(KeyCode.S) && !TwinSphereMovement.flipgravity){
 			rb.AddForce(-objgravity*1000);

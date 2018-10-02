@@ -7,6 +7,8 @@ public class DownsphereGravity : MonoBehaviour {
 	Rigidbody rb;
 	public Vector3 objgravity;
 
+	public float Force;
+
 	[SerializeField]
 	Collider BottomCollider;
 	bool ontimeentry=false;
@@ -18,9 +20,9 @@ public class DownsphereGravity : MonoBehaviour {
 	void FixedUpdate () {
 		rb.useGravity=false;
 		if(!TwinSphereMovement.flipgravity)
-			rb.AddForce(objgravity);
+			rb.AddForce(objgravity*Force);
 		else
-			rb.AddForce(-objgravity);
+			rb.AddForce(-objgravity*Force);
 
 		if(Input.GetKey(KeyCode.S) && !TwinSphereMovement.flipgravity){
 			rb.AddForce(-objgravity*1000);

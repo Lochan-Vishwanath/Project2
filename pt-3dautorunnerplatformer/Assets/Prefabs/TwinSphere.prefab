@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 65840629695028442}
   m_Layer: 0
   m_Name: MiddleCollider
-  m_TagString: Untagged
+  m_TagString: SphereMiddleCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e965384af913444ea8f51666b7b0b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.01
+  speed: 0.2
   Upcollider: {fileID: 65200760187247948}
   Bottomcollider: {fileID: 65849888948928010}
 --- !u!114 &114233421212911140
@@ -374,6 +374,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objgravity: {x: 0, y: 0, z: 0}
+  Force: 10
+  BottomCollider: {fileID: 65849888948928010}
 --- !u!114 &114971952754480990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -386,6 +388,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objgravity: {x: 0, y: 0, z: 0}
+  Force: 10
+  Upcollider: {fileID: 65200760187247948}
 --- !u!135 &135119601727128354
 SphereCollider:
   m_ObjectHideFlags: 1
