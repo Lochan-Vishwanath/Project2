@@ -40,7 +40,7 @@ public class DrawCheckPoint : MonoBehaviour{
    }
    public static Vector3 StringToVector3(string sVector)
     {
-         // Remove the parentheses
+        
         // if (sVector.StartsWith ("(") && sVector.EndsWith (")")) {
         //     sVector = sVector.Substring(1, sVector.Length-2);
         // }

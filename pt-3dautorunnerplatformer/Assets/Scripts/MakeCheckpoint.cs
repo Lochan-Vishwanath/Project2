@@ -6,7 +6,7 @@ using System.Collections;
 
 public class MakeCheckpoint : MonoBehaviour {
 
-	GameObject objToSpawn;
+    GameObject objToSpawn;
 	public float waitTime = 0.2f;
 
 	// Draw a line every fram. This is as smooth and fast as Unity can do
@@ -34,7 +34,7 @@ public class MakeCheckpoint : MonoBehaviour {
 	// Draw it after every certain amount of time
 	void Start()
 	{
-		StartCoroutine (DrawPath(waitTime));
+        StartCoroutine (DrawPath(waitTime));
 	}
 
 	IEnumerator DrawPath(float timeRate)
@@ -42,7 +42,7 @@ public class MakeCheckpoint : MonoBehaviour {
 		while (true) {
 			objToSpawn = new GameObject ("Checkpoint");
 			objToSpawn.tag = "Checkpoint";
-			objToSpawn.transform.position = this.transform.position;
+			objToSpawn.transform.position = transform.position;
 			// wait before do this again
 			yield return new WaitForSeconds (timeRate);
 		}
